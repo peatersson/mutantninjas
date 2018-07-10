@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pwd=$(pwd)
-cd mounted/test-project/build/eqdetect_generated_files
+cd mounted/eqdetect_generated_files
 
 for file_to_compile in *_klee_*;
 do
@@ -16,7 +16,7 @@ do
     then
         cd klee-last
         klee_fail_out=$(ktest-tool --write-ints $klee_fail_run.ktest)
-        echo $klee_fail_out >> ../errors.txt
+        echo $klee_fail_out >> ../../errors.txt
         cd ..
     fi
 
