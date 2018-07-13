@@ -43,11 +43,3 @@ done
 
 # remove the previously created temporary directory
 rm -rf klee-out-* klee-last
-
-
-
-
-#if [[ $klee_fail_run = *".early" ]]
-#then
-    #echo "Halt:$file_to_compile" >> ../../errors.txt
-#el

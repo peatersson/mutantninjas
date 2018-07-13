@@ -1,5 +1,3 @@
-#include "enum_example.h"
-
 int enum_example(int x){
     enum Enum {
         Off,
