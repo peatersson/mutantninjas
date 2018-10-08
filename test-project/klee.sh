@@ -7,7 +7,7 @@ for file_to_compile in *_klee_*;
 do
     clang -I $pwd/klee_src/include/ -emit-llvm -c -g $file_to_compile
     file_to_run=$(ls | grep ".bc")
-    klee -max-time=10 $file_to_run
+    klee -max-time=100 $file_to_run
 
     cd klee-out-0
     klee_fail_run=$(ls | grep ".err")
