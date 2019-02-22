@@ -89,19 +89,6 @@ This schema is only applicable when type of the expressions either sides is a po
 | `x || y` | `x && y` | `true`   | `false`  | `x` | `y` |
 
 
-# Logical Connector Replacement Bit-wise (LCRB)
-
-| Original Expression | Mutant 1 |
-| ------------------- | -------- |
-| `x | y`             | `x & y`  |
-| `x & y`             | `x | y`  |
-
-| Original | 1       | 2   | 3   |
-|----------|---------|-----|-----|
-| `x & y`  | `x | y` | `x` | `y` |
-| `x | y`  | `x & y` | `x` | `y` |
-
-
 # Unary Operator Insertion (UOI)
 The operands are:
  * Increment: ++x, x++
