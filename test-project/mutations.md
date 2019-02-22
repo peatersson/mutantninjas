@@ -31,7 +31,7 @@ This schema is only applicable when type of the expressions on both sides of an 
 | `x == y`            | `false`  |          |          |
 | `x != y`            | `true`   |          |          |
 
-Specific additional schema for equal:
+Specific additional schema for equal and not equal:
 
 | Original Expression | Mutant 1 | Condition                    | Always |
 | ------------------- | -------- | ---------------------------- | ------ |
@@ -39,8 +39,6 @@ Specific additional schema for equal:
 | `x == y`            | `x >= y` | if x is the max enum literal | `true` |
 | `x == y`            | `x >= y` | if y is the min enum literal | `true` |
 | `x == y`            | `x <= y` | if y is the max enum literal | `true` |
-
-Specific additional schema for not equal:
 
 | Original Expression | Mutant 1 | Condition                    | Always |
 | ------------------- | -------- | ---------------------------- | ------ |
