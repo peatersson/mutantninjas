@@ -1,3 +1,4 @@
+
 # Relational Operator Replacement (ROR)
 Replace a single operand with another operand.
 
@@ -19,6 +20,7 @@ amplification of infeasible mutants.
 | `x != y`            | `x < y`  | `x > y`  | `true`   |
 
 This schema is only applicable when the type of the expressions on both sides of an operator are of boolean type.
+
 | Original Expression | Mutant 1 | Mutant 2 |
 | ------------------- | -------- | -------- |
 | `x == y`            | `x != y` |  `false` |
@@ -28,6 +30,7 @@ This schema is only applicable when the type of the expressions on both sides of
 Mutations such as `<` for a boolean type is nonsensical in C++ or in C when the type is `_Bool`.
 
 This schema is only applicable when the type of the expressions on both sides of an operator are of floating point type.
+
 | Original Expression | Mutant 1 | Mutant 2 | Mutant 3 |
 | ------------------- | -------- | -------- | ---------- |
 | `x < y`             | `x > y`  |          | `false`    |
@@ -45,6 +48,7 @@ The goal is to reduce the number of *undesired* mutants.
 Strict equal is not recommended to ever use for floating point numbers. Because of this the test suite is probably not designed to catch these type of mutations which lead to *undesired* mutants. They are *techincally* not equivalent but they aren't supposed to be cought because the SUT is never supposed to do these type of operations.
 
 This schema is only applicable when type of the expressions on both sides of an operator are enums and the same enum type.
+
 | Original Expression | Mutant 1 | Mutant 2 | Mutant 3 |
 | ------------------- | -------- | -------- | -------- |
 | `x < y`             | `x <= y` | `x != y` | `false`  |
@@ -56,6 +60,7 @@ This schema is only applicable when type of the expressions on both sides of an 
 
 
 Specific additional schema for equal:
+
 | Original Expression | Mutant 1 | Condition                    | Always |
 | ------------------- | -------- | ---------------------------- | ------ |
 | `x == y`            | `x <= y` | if x is the min enum literal | `true` |
@@ -64,6 +69,7 @@ Specific additional schema for equal:
 | `x == y`            | `x <= y` | if y is the max enum literal | `true` |
 
 Specific additional schema for not equal:
+
 | Original Expression | Mutant 1 | Condition                    | Always |
 | ------------------- | -------- | ---------------------------- | ------ |
 | `x != y`            | `x < y`  | if x is the min enum literal | `true` |
@@ -78,6 +84,7 @@ The goal is to reduce the number of equivalent mutants.
 Normally an enum can't be *outside* the boundaries of an enum thus the test suite can't possibly kill such a mutants that would require an enum outside the boundaries.
 
 This schema is only applicable when type of the expressions either sides is a pointer type.
+
 | Original Expression | Mutant 1 | Mutant 2 | Mutant 3 |
 | ------------------- | -------- | -------- | -------- |
 | `x < y`             | `x <= y` | `x != y` | `false`  |
