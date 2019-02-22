@@ -84,8 +84,8 @@ This schema is only applicable when the type of the expressions on both sides of
 
 | Original | 1        | 2        | 3        | 4   | 5   |
 |----------|----------|----------|----------|-----|-----|
-| `x && y` | `x || y` | `true`   | `false`  | `x` | `y` |
-| `x || y` | `x && y` | `true`   | `false`  | `x` | `y` |
+| `x && y` | `x OR y` | `true`   | `false`  | `x` | `y` |
+| `x OR y` | `x && y` | `true`   | `false`  | `x` | `y` |
 
 
 # Unary Operator Insertion (UOI)
