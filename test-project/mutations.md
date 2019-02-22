@@ -26,6 +26,9 @@ This schema is only applicable when type of the expressions on both sides of an 
 | ------------------- | -------- | -------- | -------- |
 | `x < y`             | `x <= y` | `x != y` | `false`  |
 | `x > y`             | `x >= y` | `x != y` | `false`  |
+|                     |          |          |          |
+|                     |          |          |          |
+|                     |          |          |          |
 | `x <= y`            | `x < y`  | `x == y` | `true`   |
 | `x >= y`            | `x > y`  | `x == y` | `true`   |
 | `x == y`            | `false`  |          |          |
