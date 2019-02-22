@@ -1,4 +1,3 @@
-
 # Relational Operator Replacement (ROR)
 
 | Original Expression | Mutant 1 | Mutant 2 | Mutant 3 |
@@ -9,13 +8,6 @@
 | `x >= y`            | `x > y`  | `x == y` | `true`   |
 | `x == y`            | `x <= y` | `x >= y` | `false`  |
 | `x != y`            | `x < y`  | `x > y`  | `true`   |
-
-This schema is only applicable when the type of the expressions on both sides of an operator are of boolean type.
-
-| Original Expression | Mutant 1 | Mutant 2 |
-| ------------------- | -------- | -------- |
-| `x == y`            | `x != y` |  `false` |
-| `x != y`            | `x == y` |  `true`  |
 
 This schema is only applicable when the type of the expressions on both sides of an operator are of floating point type.
 
@@ -38,7 +30,6 @@ This schema is only applicable when type of the expressions on both sides of an 
 | `x >= y`            | `x > y`  | `x == y` | `true`   |
 | `x == y`            | `false`  |          |          |
 | `x != y`            | `true`   |          |          |
-
 
 Specific additional schema for equal:
 
@@ -68,6 +59,13 @@ This schema is only applicable when type of the expressions either sides is a po
 | `x >= y`            | `x > y`  | `x == y` | `true`   |
 | `x == y`            | `x != y` | `false`  |
 | `x != y`            | `x == y` | `true`   |
+
+This schema is only applicable when the type of the expressions on both sides of an operator are of boolean type.
+
+| Original Expression | Mutant 1 | Mutant 2 |
+| ------------------- | -------- | -------- |
+| `x == y`            | `x != y` |  `false` |
+| `x != y`            | `x == y` |  `true`  |
 
 
 # Arithmetic Operator Replacement (AOR)
