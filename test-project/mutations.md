@@ -59,7 +59,9 @@ Specific additional schema for not equal:
 | `x != y`            | `x < y`  | if y is the max enum literal | `true` |
 
 This schema is only applicable when type\
+
 of the expressions either sides is a pointer\
+
 type.
 
 | Original Expression | Mutant 1 | Mutant 2 | Mutant 3 |
