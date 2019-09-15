@@ -1,3 +1,17 @@
+extern int MUTANT_NR;
+#ifndef schemata_h
+#define schemata_h
+#include <cstdlib>
+
+extern int MUTANT_NR;
+/*
+static void __SchemataInit() __attribute__(( constructor ));
+
+static void __SchemataInit(){
+  MUTANT_NR = std::atoi(getenv("MUTANT_NR"));
+  }*/
+#endif
+
 int enum_example(int x){
     enum Enum {
         Off,
@@ -25,13 +39,13 @@ int enum_example(int x){
             break;
     };
 
-    if(module == Off){
+    if((MUTANT_NR == 18 ? module <= Off: (MUTANT_NR == 18 ? module >= Off: (MUTANT_NR == 18 ? false: module == Off)))){
         return 3;
     }
-    else if(module == Ready){
+    else if((MUTANT_NR == 18 ? module <= Ready: (MUTANT_NR == 18 ? module >= Ready: (MUTANT_NR == 18 ? false: module == Ready)))){
         return 4;
     }
-    else if(module == Steady){
+    else if((MUTANT_NR == 18 ? module <= Steady: (MUTANT_NR == 18 ? module >= Steady: (MUTANT_NR == 18 ? false: module == Steady)))){
         return 7;
     }
     else{
