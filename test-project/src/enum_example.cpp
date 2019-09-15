@@ -1,4 +1,3 @@
-extern int MUTANT_NR;
 #ifndef schemata_h
 #define schemata_h
 #include <cstdlib>
@@ -39,13 +38,13 @@ int enum_example(int x){
             break;
     };
 
-    if((MUTANT_NR == 18 ? module <= Off: (MUTANT_NR == 18 ? module >= Off: (MUTANT_NR == 18 ? false: module == Off)))){
+    if(module == Off){
         return 3;
     }
-    else if((MUTANT_NR == 18 ? module <= Ready: (MUTANT_NR == 18 ? module >= Ready: (MUTANT_NR == 18 ? false: module == Ready)))){
+    else if(module == Ready){
         return 4;
     }
-    else if((MUTANT_NR == 18 ? module <= Steady: (MUTANT_NR == 18 ? module >= Steady: (MUTANT_NR == 18 ? false: module == Steady)))){
+    else if(module == Steady){
         return 7;
     }
     else{
